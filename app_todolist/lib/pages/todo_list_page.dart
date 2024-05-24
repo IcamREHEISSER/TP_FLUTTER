@@ -38,13 +38,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
     .add(Task.convertToMap(newTask))
     .then((doc) {_refreshToDoList();});
   }
-
-  _checkTask(String id, bool newStatus) async {
-    database.collection("Tasks").doc(id)
-    .update({"status": newStatus.toString()})
-    .then((doc) {_refreshToDoList();});
-  }
-
+  
   _deleteTask(String id) async {
     database
     .collection("Tasks").doc(id)
@@ -65,7 +59,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
             return TaskTile(
               task: task, 
               onDelete: (id) => _deleteTask(id),
-              onChecked: (id, newStatus) => _checkTask(id, newStatus),
+              onChecked: (id, newStatus) => _refreshToDoList(),
             );
           },
         ),

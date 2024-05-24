@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import '/pages/authentification_page.dart';
 
 import 'firebase_options.dart';
-import 'pages/todo_list_page.dart';
 
 void main() async {
   await Firebase.initializeApp(
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ToDoListPage(),
+      home: AuthentificationPage(),
     );
   }
 }

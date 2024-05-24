@@ -3,7 +3,7 @@ class Task {
   final String? id;
   final String texte;
   final DateTime dateAjout;
-  bool status;
+  bool? status;
   
   Task({
     this.id, 
